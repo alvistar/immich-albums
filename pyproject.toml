@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "immich-albums"
+version = "0.1.0"
+description = ""
+authors = ["Alessandro Vigano <alvistar@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+psycopg = "^3.1.11"
+openapi_client = { path = "openapi_client/", develop = true }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
