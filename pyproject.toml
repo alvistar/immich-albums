@@ -11,6 +11,8 @@ openapi_client = { path = "generated/openapi_client/"}
 click = "^8.1.7"
 pyyaml = "^6.0.1"
 
+[tool.poetry.scripts]
+im = "immich_albums.im:cli"
 
 [build-system]
 requires = ["poetry-core"]

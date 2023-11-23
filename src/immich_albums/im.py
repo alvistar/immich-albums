@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional
 
 import os
 import click
@@ -186,8 +186,8 @@ def set_default(ctx, param, value):
 @click.option("--skip", help="Folders to skip", multiple=True, default=[])
 @click.option("--skip-existing", help="Skip existing albums", required=False, is_flag=True)
 @click.argument('path', type=click.Path(exists=True), required=True)
-def immich(api_key, api_host, path, original_path, replace_path, recursive,
-           dry_run, skip, skip_existing):
+def cli(api_key, api_host, path, original_path, replace_path, recursive,
+        dry_run, skip, skip_existing):
     immich_albums = ImmichAlbums(api_host, api_key)
     immich_albums.create_albums_from_folder(
         path=path,
@@ -202,4 +202,4 @@ def immich(api_key, api_host, path, original_path, replace_path, recursive,
 
 # main block
 if __name__ == '__main__':
-    immich()
+    cli()
