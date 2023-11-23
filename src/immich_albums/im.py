@@ -27,7 +27,7 @@ def read_album_id(path) -> Optional[str]:
 
 
 class ImmichAlbums:
-    def __init__(self,  api_host, api_key):
+    def __init__(self, api_host, api_key):
         api_configuration = openapi_client.Configuration(
             host=api_host,
         )
@@ -35,7 +35,6 @@ class ImmichAlbums:
         api_configuration.api_key['api_key'] = api_key
 
         self.api_configuration = api_configuration
-
 
     def get_asset_by_original_path(self, original_path) -> Optional[int]:
         with openapi_client.ApiClient(self.api_configuration) as api_client:
