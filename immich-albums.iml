@@ -3,7 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/openapi_client/openapi_client.egg-info" />
+      <sourceFolder url="file://$MODULE_DIR$/generated/openapi_client" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/generated/openapi_client/openapi_client.egg-info" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,9 +1,7 @@
 from typing import Optional, List
 
-import psycopg
 import os
 import click
-from psycopg.rows import dict_row
 import openapi_client
 from openapi_client import ApiException, AlbumResponseDto
 
@@ -13,14 +11,6 @@ try:
     from yaml import CLoader as Loader
 except ImportError:
     from yaml import Loader
-
-# Database connection parameters
-db_params = {
-    'host': 'postgres',  # Replace with your PostgreSQL host address
-    'dbname': 'immich',  # Replace with your database name
-    'user': 'immich',  # Replace with your database user
-    'password': 'immich'  # Replace with your database password
-}
 
 
 def write_album_id(path, id):
@@ -37,12 +27,7 @@ def read_album_id(path) -> Optional[str]:
 
 
 class ImmichAlbums:
-    def __init__(self, db_host, db_name, db_user, db_password, api_host, api_key):
-        self.db_host = db_host
-        self.db_name = db_name
-        self.db_user = db_user
-        self.db_password = db_password
-
+    def __init__(self,  api_host, api_key):
         api_configuration = openapi_client.Configuration(
             host=api_host,
         )
@@ -51,19 +36,14 @@ class ImmichAlbums:
 
         self.api_configuration = api_configuration
 
-    def get_asset_by_original_path(self, original_path) -> Optional[int]:
-        query = """SELECT * FROM assets WHERE "originalPath" = %s;"""
-        with psycopg.connect(
-                host=self.db_host,
-                dbname=self.db_name,
-                user=self.db_user,
-                password=self.db_password
 
-        ) as conn:
-            with conn.cursor(row_factory=dict_row) as cur:
-                cur.execute(query, (original_path,))
-                result = cur.fetchone()
-                return result['id'] if result else None
+    def get_asset_by_original_path(self, original_path) -> Optional[int]:
+        with openapi_client.ApiClient(self.api_configuration) as api_client:
+            # Create an instance of the API class
+            api_instance = openapi_client.AssetApi(api_client)
+
+            assets = api_instance.search_assets(original_path=original_path)
+            return assets[0].id if len(assets) > 0 else None
 
     def create_album(self, album_name, assets_ids) -> str:
         with openapi_client.ApiClient(self.api_configuration) as api_client:
@@ -111,7 +91,7 @@ class ImmichAlbums:
                 replaced_path = full_path.replace(original_path, replace_path)
                 print(f"searching for: {replaced_path}")
                 asset_id = self.get_asset_by_original_path(replaced_path)
-                if (asset_id is None):
+                if asset_id is None:
                     print(f'not found: {replaced_path}')
                 else:
                     print(f'found asset id: {asset_id}')
@@ -157,6 +137,7 @@ class ImmichAlbums:
                                   skip=None,
                                   skip_existing: bool = False
                                   ):
+
         if skip is None:
             skip = []
 
@@ -197,10 +178,6 @@ def set_default(ctx, param, value):
               is_eager=True,
               expose_value=False)
 @click.option('--api-key', help='Immich API key', required=True)
-@click.option('--db-host', help='Immich Db Host', required=True)
-@click.option('--db-name', help='Immich Db Name', required=True)
-@click.option('--db-user', help='Immich Db User', required=True)
-@click.option('--db-password', help='Immich Db Password', required=True)
 @click.option('--api-host', help='Immich API Host', required=True)
 @click.option("--original-path", help="Original path on local host", required=True)
 @click.option("--replace-path", help="Path as seen from immich host", required=True)
@@ -209,9 +186,9 @@ def set_default(ctx, param, value):
 @click.option("--skip", help="Folders to skip", multiple=True, default=[])
 @click.option("--skip-existing", help="Skip existing albums", required=False, is_flag=True)
 @click.argument('path', type=click.Path(exists=True), required=True)
-def immich(api_key, api_host, db_host, db_name, db_user, db_password, path, original_path, replace_path, recursive,
+def immich(api_key, api_host, path, original_path, replace_path, recursive,
            dry_run, skip, skip_existing):
-    immich_albums = ImmichAlbums(db_host, db_name, db_user, db_password, api_host, api_key)
+    immich_albums = ImmichAlbums(api_host, api_key)
     immich_albums.create_albums_from_folder(
         path=path,
         original_path=original_path,
