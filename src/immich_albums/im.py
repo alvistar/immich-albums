@@ -188,8 +188,9 @@ def set_default(ctx, param, value):
 def cli(api_key, api_host, path, original_path, replace_path, recursive,
         dry_run, skip, skip_existing):
     immich_albums = ImmichAlbums(api_host, api_key)
+    abs_path = os.path.abspath(path)
     immich_albums.create_albums_from_folder(
-        path=path,
+        path=abs_path,
         original_path=original_path,
         replace_path=replace_path,
         recursive=recursive,
