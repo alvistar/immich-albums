@@ -2,18 +2,17 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **background_task** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
-**clip_encoding** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
+**face_detection** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **library** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **metadata_extraction** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **migration** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
-**object_tagging** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
-**recognize_faces** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **search** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **sidecar** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
-**storage_template_migration** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
+**smart_search** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **thumbnail_generation** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 **video_conversion** | [**JobSettingsDto**](JobSettingsDto.md) |  | 
 

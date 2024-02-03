@@ -2,11 +2,15 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**date_time_original** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **is_archived** | **bool** |  | [optional] 
 **is_favorite** | **bool** |  | [optional] 
+**latitude** | **float** |  | [optional] 
+**longitude** | **float** |  | [optional] 
 
 ## Example
 

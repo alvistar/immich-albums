@@ -21,6 +21,7 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -73,6 +74,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -89,6 +91,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -105,6 +108,7 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -157,6 +161,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -173,6 +178,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -189,6 +195,7 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -243,6 +250,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **theme** | [**MapTheme**](.md)|  | 
@@ -261,6 +269,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -277,6 +286,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -329,6 +339,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -345,6 +356,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -361,6 +373,7 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -415,6 +428,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **system_config_dto** | [**SystemConfigDto**](SystemConfigDto.md)|  | 
@@ -433,6 +447,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

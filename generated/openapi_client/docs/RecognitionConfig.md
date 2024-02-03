@@ -2,12 +2,13 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enabled** | **bool** |  | 
-**max_distance** | **int** |  | 
+**max_distance** | **float** |  | 
 **min_faces** | **int** |  | 
-**min_score** | **int** |  | 
+**min_score** | **float** |  | 
 **model_name** | **str** |  | 
 **model_type** | [**ModelType**](ModelType.md) |  | [optional] 
 

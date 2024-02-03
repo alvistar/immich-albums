@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avatar_color** | [**UserAvatarColor**](UserAvatarColor.md) |  | [optional] 
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **memories_enabled** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
+**quota_size_in_bytes** | **int** |  | [optional] 
 **should_change_password** | **bool** |  | [optional] 
 **storage_label** | **str** |  | [optional] 
 

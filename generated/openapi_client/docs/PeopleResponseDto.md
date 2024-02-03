@@ -2,11 +2,11 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **people** | [**List[PersonResponseDto]**](PersonResponseDto.md) |  | 
 **total** | **int** |  | 
-**visible** | **int** |  | 
 
 ## Example
 

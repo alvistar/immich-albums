@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auto_launch** | **bool** |  | 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **mobile_override_enabled** | **bool** |  | 
 **mobile_redirect_uri** | **str** |  | 
 **scope** | **str** |  | 
+**signing_algorithm** | **str** |  | 
 **storage_label_claim** | **str** |  | 
 
 ## Example

@@ -2,17 +2,20 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ffmpeg** | [**SystemConfigFFmpegDto**](SystemConfigFFmpegDto.md) |  | 
 **job** | [**SystemConfigJobDto**](SystemConfigJobDto.md) |  | 
 **library** | [**SystemConfigLibraryDto**](SystemConfigLibraryDto.md) |  | 
+**logging** | [**SystemConfigLoggingDto**](SystemConfigLoggingDto.md) |  | 
 **machine_learning** | [**SystemConfigMachineLearningDto**](SystemConfigMachineLearningDto.md) |  | 
 **map** | [**SystemConfigMapDto**](SystemConfigMapDto.md) |  | 
 **new_version_check** | [**SystemConfigNewVersionCheckDto**](SystemConfigNewVersionCheckDto.md) |  | 
 **oauth** | [**SystemConfigOAuthDto**](SystemConfigOAuthDto.md) |  | 
 **password_login** | [**SystemConfigPasswordLoginDto**](SystemConfigPasswordLoginDto.md) |  | 
 **reverse_geocoding** | [**SystemConfigReverseGeocodingDto**](SystemConfigReverseGeocodingDto.md) |  | 
+**server** | [**SystemConfigServerDto**](SystemConfigServerDto.md) |  | 
 **storage_template** | [**SystemConfigStorageTemplateDto**](SystemConfigStorageTemplateDto.md) |  | 
 **theme** | [**SystemConfigThemeDto**](SystemConfigThemeDto.md) |  | 
 **thumbnail** | [**SystemConfigThumbnailDto**](SystemConfigThumbnailDto.md) |  | 

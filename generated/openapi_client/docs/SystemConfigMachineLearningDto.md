@@ -2,9 +2,9 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**classification** | [**ClassificationConfig**](ClassificationConfig.md) |  | 
 **clip** | [**CLIPConfig**](CLIPConfig.md) |  | 
 **enabled** | **bool** |  | 
 **facial_recognition** | [**RecognitionConfig**](RecognitionConfig.md) |  | 

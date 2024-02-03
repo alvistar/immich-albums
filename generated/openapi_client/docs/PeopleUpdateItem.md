@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **birth_date** | **date** | Person date of birth. Note: the mobile app cannot currently set the birth date to null. | [optional] 

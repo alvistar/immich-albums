@@ -2,9 +2,11 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scan** | [**SystemConfigLibraryScanDto**](SystemConfigLibraryScanDto.md) |  | 
+**watch** | [**SystemConfigLibraryWatchDto**](SystemConfigLibraryWatchDto.md) |  | 
 
 ## Example
 

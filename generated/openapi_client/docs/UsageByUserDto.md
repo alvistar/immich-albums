@@ -2,9 +2,11 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **photos** | **int** |  | 
+**quota_size_in_bytes** | **int** |  | 
 **usage** | **int** |  | 
 **user_id** | **str** |  | 
 **user_name** | **str** |  | 

@@ -2,9 +2,9 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clip_encode** | **bool** |  | 
 **config_file** | **bool** |  | 
 **facial_recognition** | **bool** |  | 
 **map** | **bool** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **reverse_geocoding** | **bool** |  | 
 **search** | **bool** |  | 
 **sidecar** | **bool** |  | 
-**tag_image** | **bool** |  | 
+**smart_search** | **bool** |  | 
 **trash** | **bool** |  | 
 
 ## Example

@@ -24,6 +24,7 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -81,6 +82,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -101,6 +103,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -117,6 +120,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -172,6 +176,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shared_link_create_dto** | [**SharedLinkCreateDto**](SharedLinkCreateDto.md)|  | 
@@ -190,6 +195,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -206,6 +212,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -258,6 +265,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -274,6 +282,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -281,7 +290,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_shared_link**
-> SharedLinkResponseDto get_my_shared_link(password=password, token=token, key=key)
+> SharedLinkResponseDto get_my_shared_link(key=key, password=password, token=token)
 
 
 
@@ -290,6 +299,7 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -330,12 +340,12 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SharedLinkApi(api_client)
+    key = 'key_example' # str |  (optional)
     password = 'password' # str |  (optional)
     token = 'token_example' # str |  (optional)
-    key = 'key_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_my_shared_link(password=password, token=token, key=key)
+        api_response = api_instance.get_my_shared_link(key=key, password=password, token=token)
         print("The response of SharedLinkApi->get_my_shared_link:\n")
         pprint(api_response)
     except Exception as e:
@@ -346,11 +356,12 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **key** | **str**|  | [optional] 
  **password** | **str**|  | [optional] 
  **token** | **str**|  | [optional] 
- **key** | **str**|  | [optional] 
 
 ### Return type
 
@@ -366,6 +377,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -382,6 +394,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -436,6 +449,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -454,6 +468,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -470,6 +485,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -521,6 +537,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -539,6 +556,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -555,6 +573,7 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -612,6 +631,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -632,6 +652,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -648,6 +669,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -704,6 +726,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -723,6 +746,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

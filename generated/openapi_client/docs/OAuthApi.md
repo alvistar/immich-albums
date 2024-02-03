@@ -19,6 +19,7 @@ Method | HTTP request | Description
 
 ### Example
 
+
 ```python
 import time
 import os
@@ -53,6 +54,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_callback_dto** | [**OAuthCallbackDto**](OAuthCallbackDto.md)|  | 
@@ -71,6 +73,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -85,6 +88,7 @@ No authorization required
 @deprecated use feature flags and /oauth/authorize
 
 ### Example
+
 
 ```python
 import time
@@ -120,6 +124,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_config_dto** | [**OAuthConfigDto**](OAuthConfigDto.md)|  | 
@@ -138,6 +143,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -154,6 +160,7 @@ No authorization required
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -209,6 +216,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_callback_dto** | [**OAuthCallbackDto**](OAuthCallbackDto.md)|  | 
@@ -227,6 +235,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -239,6 +248,7 @@ Name | Type | Description  | Notes
 
 
 ### Example
+
 
 ```python
 import time
@@ -268,6 +278,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -284,6 +295,7 @@ No authorization required
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -296,6 +308,7 @@ No authorization required
 
 
 ### Example
+
 
 ```python
 import time
@@ -331,6 +344,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_config_dto** | [**OAuthConfigDto**](OAuthConfigDto.md)|  | 
@@ -349,6 +363,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -365,6 +380,7 @@ No authorization required
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -417,6 +433,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -433,6 +450,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **counts** | [**List[SearchFacetCountResponseDto]**](SearchFacetCountResponseDto.md) |  | 

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avatar_color** | [**UserAvatarColor**](UserAvatarColor.md) |  | 

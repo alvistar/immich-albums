@@ -2,11 +2,15 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**date_time_original** | **str** |  | [optional] 
 **ids** | **List[str]** |  | 
 **is_archived** | **bool** |  | [optional] 
 **is_favorite** | **bool** |  | [optional] 
+**latitude** | **float** |  | [optional] 
+**longitude** | **float** |  | [optional] 
 **remove_parent** | **bool** |  | [optional] 
 **stack_parent_id** | **str** |  | [optional] 
 

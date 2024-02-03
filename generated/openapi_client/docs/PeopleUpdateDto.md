@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **people** | [**List[PeopleUpdateItem]**](PeopleUpdateItem.md) |  | 

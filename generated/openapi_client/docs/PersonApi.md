@@ -4,15 +4,104 @@ All URIs are relative to */api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_person**](PersonApi.md#create_person) | **POST** /person | 
 [**get_all_people**](PersonApi.md#get_all_people) | **GET** /person | 
 [**get_person**](PersonApi.md#get_person) | **GET** /person/{id} | 
 [**get_person_assets**](PersonApi.md#get_person_assets) | **GET** /person/{id}/assets | 
 [**get_person_statistics**](PersonApi.md#get_person_statistics) | **GET** /person/{id}/statistics | 
 [**get_person_thumbnail**](PersonApi.md#get_person_thumbnail) | **GET** /person/{id}/thumbnail | 
 [**merge_person**](PersonApi.md#merge_person) | **POST** /person/{id}/merge | 
+[**reassign_faces**](PersonApi.md#reassign_faces) | **PUT** /person/{id}/reassign | 
 [**update_people**](PersonApi.md#update_people) | **PUT** /person | 
 [**update_person**](PersonApi.md#update_person) | **PUT** /person/{id} | 
 
+
+# **create_person**
+> PersonResponseDto create_person()
+
+
+
+### Example
+
+* Api Key Authentication (cookie):
+* Api Key Authentication (api_key):
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.person_response_dto import PersonResponseDto
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: cookie
+configuration.api_key['cookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookie'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearer
+configuration = openapi_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PersonApi(api_client)
+
+    try:
+        api_response = api_instance.create_person()
+        print("The response of PersonApi->create_person:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PersonApi->create_person: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PersonResponseDto**](PersonResponseDto.md)
+
+### Authorization
+
+[cookie](../README.md#cookie), [api_key](../README.md#api_key), [bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_people**
 > PeopleResponseDto get_all_people(with_hidden=with_hidden)
@@ -24,6 +113,7 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -78,6 +168,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **with_hidden** | **bool**|  | [optional] [default to False]
@@ -96,6 +187,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -112,6 +204,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -166,6 +259,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -184,6 +278,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -200,6 +295,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -254,6 +350,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -272,6 +369,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -288,6 +386,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -342,6 +441,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -360,6 +460,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -376,6 +477,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -429,6 +531,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -444,9 +547,10 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: image/jpeg
+ - **Accept**: application/octet-stream
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -463,6 +567,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -519,6 +624,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -538,9 +644,104 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reassign_faces**
+> List[PersonResponseDto] reassign_faces(id, asset_face_update_dto)
+
+
+
+### Example
+
+* Api Key Authentication (cookie):
+* Api Key Authentication (api_key):
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.asset_face_update_dto import AssetFaceUpdateDto
+from openapi_client.models.person_response_dto import PersonResponseDto
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: cookie
+configuration.api_key['cookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookie'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearer
+configuration = openapi_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PersonApi(api_client)
+    id = 'id_example' # str | 
+    asset_face_update_dto = openapi_client.AssetFaceUpdateDto() # AssetFaceUpdateDto | 
+
+    try:
+        api_response = api_instance.reassign_faces(id, asset_face_update_dto)
+        print("The response of PersonApi->reassign_faces:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PersonApi->reassign_faces: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **asset_face_update_dto** | [**AssetFaceUpdateDto**](AssetFaceUpdateDto.md)|  | 
+
+### Return type
+
+[**List[PersonResponseDto]**](PersonResponseDto.md)
+
+### Authorization
+
+[cookie](../README.md#cookie), [api_key](../README.md#api_key), [bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -554,6 +755,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -609,6 +811,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **people_update_dto** | [**PeopleUpdateDto**](PeopleUpdateDto.md)|  | 
@@ -627,6 +830,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -643,6 +847,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -699,6 +904,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -718,6 +924,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

@@ -2,11 +2,13 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **exclusion_patterns** | **List[str]** |  | [optional] 
 **import_paths** | **List[str]** |  | [optional] 
 **is_visible** | **bool** |  | [optional] 
+**is_watched** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **type** | [**LibraryType**](LibraryType.md) |  | 
 

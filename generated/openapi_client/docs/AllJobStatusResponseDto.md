@@ -2,17 +2,18 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **background_task** | [**JobStatusDto**](JobStatusDto.md) |  | 
-**clip_encoding** | [**JobStatusDto**](JobStatusDto.md) |  | 
+**face_detection** | [**JobStatusDto**](JobStatusDto.md) |  | 
+**facial_recognition** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **library** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **metadata_extraction** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **migration** | [**JobStatusDto**](JobStatusDto.md) |  | 
-**object_tagging** | [**JobStatusDto**](JobStatusDto.md) |  | 
-**recognize_faces** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **search** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **sidecar** | [**JobStatusDto**](JobStatusDto.md) |  | 
+**smart_search** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **storage_template_migration** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **thumbnail_generation** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **video_conversion** | [**JobStatusDto**](JobStatusDto.md) |  | 

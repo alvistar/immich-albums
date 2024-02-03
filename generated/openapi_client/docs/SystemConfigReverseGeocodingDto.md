@@ -2,9 +2,9 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cities_file_override** | [**CitiesFile**](CitiesFile.md) |  | 
 **enabled** | **bool** |  | 
 
 ## Example

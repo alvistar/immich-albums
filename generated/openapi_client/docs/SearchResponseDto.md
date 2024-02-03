@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **albums** | [**SearchAlbumResponseDto**](SearchAlbumResponseDto.md) |  | 

@@ -2,15 +2,19 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accel** | [**TranscodeHWAccel**](TranscodeHWAccel.md) |  | 
+**accepted_audio_codecs** | [**List[AudioCodec]**](AudioCodec.md) |  | 
+**accepted_video_codecs** | [**List[VideoCodec]**](VideoCodec.md) |  | 
 **bframes** | **int** |  | 
 **cq_mode** | [**CQMode**](CQMode.md) |  | 
 **crf** | **int** |  | 
 **gop_size** | **int** |  | 
 **max_bitrate** | **str** |  | 
 **npl** | **int** |  | 
+**preferred_hw_device** | **str** |  | 
 **preset** | **str** |  | 
 **refs** | **int** |  | 
 **target_audio_codec** | [**AudioCodec**](AudioCodec.md) |  | 

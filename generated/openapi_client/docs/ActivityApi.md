@@ -20,6 +20,7 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -75,6 +76,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activity_create_dto** | [**ActivityCreateDto**](ActivityCreateDto.md)|  | 
@@ -93,6 +95,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -109,6 +112,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -160,6 +164,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -178,6 +183,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** |  |  -  |
@@ -185,7 +191,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_activities**
-> List[ActivityResponseDto] get_activities(album_id, asset_id=asset_id, type=type, level=level, user_id=user_id)
+> List[ActivityResponseDto] get_activities(album_id, asset_id=asset_id, level=level, type=type, user_id=user_id)
 
 
 
@@ -194,6 +200,7 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -238,12 +245,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.ActivityApi(api_client)
     album_id = 'album_id_example' # str | 
     asset_id = 'asset_id_example' # str |  (optional)
-    type = openapi_client.ReactionType() # ReactionType |  (optional)
     level = openapi_client.ReactionLevel() # ReactionLevel |  (optional)
+    type = openapi_client.ReactionType() # ReactionType |  (optional)
     user_id = 'user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_activities(album_id, asset_id=asset_id, type=type, level=level, user_id=user_id)
+        api_response = api_instance.get_activities(album_id, asset_id=asset_id, level=level, type=type, user_id=user_id)
         print("The response of ActivityApi->get_activities:\n")
         pprint(api_response)
     except Exception as e:
@@ -254,12 +261,13 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **album_id** | **str**|  | 
  **asset_id** | **str**|  | [optional] 
- **type** | [**ReactionType**](.md)|  | [optional] 
  **level** | [**ReactionLevel**](.md)|  | [optional] 
+ **type** | [**ReactionType**](.md)|  | [optional] 
  **user_id** | **str**|  | [optional] 
 
 ### Return type
@@ -276,6 +284,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -292,6 +301,7 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
 import time
 import os
@@ -347,6 +357,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **album_id** | **str**|  | 
@@ -366,6 +377,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
