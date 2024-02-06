@@ -97,7 +97,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_audit_deletes**
-> AuditDeletesResponseDto get_audit_deletes(entity_type, after, user_id=user_id)
+> AuditDeletesResponseDto get_audit_deletes(after, entity_type, user_id=user_id)
 
 
 
@@ -147,12 +147,12 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AuditApi(api_client)
-    entity_type = openapi_client.EntityType() # EntityType | 
     after = '2013-10-20T19:20:30+01:00' # datetime | 
+    entity_type = openapi_client.EntityType() # EntityType | 
     user_id = 'user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_audit_deletes(entity_type, after, user_id=user_id)
+        api_response = api_instance.get_audit_deletes(after, entity_type, user_id=user_id)
         print("The response of AuditApi->get_audit_deletes:\n")
         pprint(api_response)
     except Exception as e:
@@ -165,8 +165,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entity_type** | [**EntityType**](.md)|  | 
  **after** | **datetime**|  | 
+ **entity_type** | [**EntityType**](.md)|  | 
  **user_id** | **str**|  | [optional] 
 
 ### Return type

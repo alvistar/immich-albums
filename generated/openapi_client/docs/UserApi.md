@@ -535,7 +535,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_profile_image**
-> object get_profile_image(id)
+> bytearray get_profile_image(id)
 
 
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**bytearray**
 
 ### Authorization
 
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **memories_enabled** | **bool** |  | [optional] 
 **name** | **str** |  | 
 **password** | **str** |  | 
+**quota_size_in_bytes** | **int** |  | [optional] 
 **storage_label** | **str** |  | [optional] 
 
 ## Example

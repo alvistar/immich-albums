@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_shared_link**
-> SharedLinkResponseDto get_my_shared_link(password=password, token=token, key=key)
+> SharedLinkResponseDto get_my_shared_link(key=key, password=password, token=token)
 
 
 
@@ -330,12 +330,12 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SharedLinkApi(api_client)
+    key = 'key_example' # str |  (optional)
     password = 'password' # str |  (optional)
     token = 'token_example' # str |  (optional)
-    key = 'key_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_my_shared_link(password=password, token=token, key=key)
+        api_response = api_instance.get_my_shared_link(key=key, password=password, token=token)
         print("The response of SharedLinkApi->get_my_shared_link:\n")
         pprint(api_response)
     except Exception as e:
@@ -348,9 +348,9 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **key** | **str**|  | [optional] 
  **password** | **str**|  | [optional] 
  **token** | **str**|  | [optional] 
- **key** | **str**|  | [optional] 
 
 ### Return type
 

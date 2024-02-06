@@ -50,7 +50,7 @@ class ImmichAlbums:
             api_instance = openapi_client.AlbumApi(api_client)
 
         try:
-            print(f"Creating album ${album_name}\n")
+            print(f"Creating album {album_name}\n")
 
             create_album_request = openapi_client.CreateAlbumDto(
                 album_name=album_name,
@@ -119,7 +119,6 @@ class ImmichAlbums:
                 print(f"Adding assets to album {album_id}")
                 self.add_picture_to_album(album_id, assets_ids)
             else:
-                print(f"Creating album {album}")
                 album_id = self.create_album(album, assets_ids)
                 print("Creating .album")
                 write_album_id(path, album_id)

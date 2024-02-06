@@ -4,7 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**external_domain** | **str** |  | 
 **is_initialized** | **bool** |  | 
+**is_onboarded** | **bool** |  | 
 **login_page_message** | **str** |  | 
 **oauth_button_text** | **str** |  | 
 **trash_days** | **int** |  | 

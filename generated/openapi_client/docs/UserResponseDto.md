@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **oauth_id** | **str** |  | 
 **profile_image_path** | **str** |  | 
+**quota_size_in_bytes** | **int** |  | 
+**quota_usage_in_bytes** | **int** |  | 
 **should_change_password** | **bool** |  | 
 **storage_label** | **str** |  | 
 **updated_at** | **datetime** |  | 

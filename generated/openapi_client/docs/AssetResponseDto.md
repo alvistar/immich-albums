@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **original_path** | **str** |  | 
 **owner** | [**UserResponseDto**](UserResponseDto.md) |  | [optional] 
 **owner_id** | **str** |  | 
-**people** | [**List[PersonResponseDto]**](PersonResponseDto.md) |  | [optional] 
+**people** | [**List[PersonWithFacesResponseDto]**](PersonWithFacesResponseDto.md) |  | [optional] 
 **resized** | **bool** |  | 
 **smart_info** | [**SmartInfoResponseDto**](SmartInfoResponseDto.md) |  | [optional] 
 **stack** | [**List[AssetResponseDto]**](AssetResponseDto.md) |  | [optional] 

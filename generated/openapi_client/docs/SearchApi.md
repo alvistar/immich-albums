@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search**
-> SearchResponseDto search(q=q, query=query, clip=clip, type=type, is_favorite=is_favorite, is_archived=is_archived, exif_info_city=exif_info_city, exif_info_state=exif_info_state, exif_info_country=exif_info_country, exif_info_make=exif_info_make, exif_info_model=exif_info_model, exif_info_projection_type=exif_info_projection_type, smart_info_objects=smart_info_objects, smart_info_tags=smart_info_tags, recent=recent, motion=motion)
+> SearchResponseDto search(clip=clip, motion=motion, q=q, query=query, recent=recent, smart=smart, type=type, with_archived=with_archived)
 
 
 
@@ -143,25 +143,17 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SearchApi(api_client)
+    clip = True # bool | @deprecated (optional)
+    motion = True # bool |  (optional)
     q = 'q_example' # str |  (optional)
     query = 'query_example' # str |  (optional)
-    clip = True # bool |  (optional)
-    type = 'type_example' # str |  (optional)
-    is_favorite = True # bool |  (optional)
-    is_archived = True # bool |  (optional)
-    exif_info_city = 'exif_info_city_example' # str |  (optional)
-    exif_info_state = 'exif_info_state_example' # str |  (optional)
-    exif_info_country = 'exif_info_country_example' # str |  (optional)
-    exif_info_make = 'exif_info_make_example' # str |  (optional)
-    exif_info_model = 'exif_info_model_example' # str |  (optional)
-    exif_info_projection_type = 'exif_info_projection_type_example' # str |  (optional)
-    smart_info_objects = ['smart_info_objects_example'] # List[str] |  (optional)
-    smart_info_tags = ['smart_info_tags_example'] # List[str] |  (optional)
     recent = True # bool |  (optional)
-    motion = True # bool |  (optional)
+    smart = True # bool |  (optional)
+    type = 'type_example' # str |  (optional)
+    with_archived = True # bool |  (optional)
 
     try:
-        api_response = api_instance.search(q=q, query=query, clip=clip, type=type, is_favorite=is_favorite, is_archived=is_archived, exif_info_city=exif_info_city, exif_info_state=exif_info_state, exif_info_country=exif_info_country, exif_info_make=exif_info_make, exif_info_model=exif_info_model, exif_info_projection_type=exif_info_projection_type, smart_info_objects=smart_info_objects, smart_info_tags=smart_info_tags, recent=recent, motion=motion)
+        api_response = api_instance.search(clip=clip, motion=motion, q=q, query=query, recent=recent, smart=smart, type=type, with_archived=with_archived)
         print("The response of SearchApi->search:\n")
         pprint(api_response)
     except Exception as e:
@@ -174,22 +166,14 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **clip** | **bool**| @deprecated | [optional] 
+ **motion** | **bool**|  | [optional] 
  **q** | **str**|  | [optional] 
  **query** | **str**|  | [optional] 
- **clip** | **bool**|  | [optional] 
- **type** | **str**|  | [optional] 
- **is_favorite** | **bool**|  | [optional] 
- **is_archived** | **bool**|  | [optional] 
- **exif_info_city** | **str**|  | [optional] 
- **exif_info_state** | **str**|  | [optional] 
- **exif_info_country** | **str**|  | [optional] 
- **exif_info_make** | **str**|  | [optional] 
- **exif_info_model** | **str**|  | [optional] 
- **exif_info_projection_type** | **str**|  | [optional] 
- **smart_info_objects** | [**List[str]**](str.md)|  | [optional] 
- **smart_info_tags** | [**List[str]**](str.md)|  | [optional] 
  **recent** | **bool**|  | [optional] 
- **motion** | **bool**|  | [optional] 
+ **smart** | **bool**|  | [optional] 
+ **type** | **str**|  | [optional] 
+ **with_archived** | **bool**|  | [optional] 
 
 ### Return type
 

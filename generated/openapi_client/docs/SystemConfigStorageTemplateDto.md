@@ -4,6 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**enabled** | **bool** |  | 
+**hash_verification_enabled** | **bool** |  | 
 **template** | **str** |  | 
 
 ## Example

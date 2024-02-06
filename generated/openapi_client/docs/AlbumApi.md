@@ -459,7 +459,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_album_info**
-> AlbumResponseDto get_album_info(id, without_assets=without_assets, key=key)
+> AlbumResponseDto get_album_info(id, key=key, without_assets=without_assets)
 
 
 
@@ -509,11 +509,11 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AlbumApi(api_client)
     id = 'id_example' # str | 
-    without_assets = True # bool |  (optional)
     key = 'key_example' # str |  (optional)
+    without_assets = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_album_info(id, without_assets=without_assets, key=key)
+        api_response = api_instance.get_album_info(id, key=key, without_assets=without_assets)
         print("The response of AlbumApi->get_album_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -527,8 +527,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **without_assets** | **bool**|  | [optional] 
  **key** | **str**|  | [optional] 
+ **without_assets** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_albums**
-> List[AlbumResponseDto] get_all_albums(shared=shared, asset_id=asset_id)
+> List[AlbumResponseDto] get_all_albums(asset_id=asset_id, shared=shared)
 
 
 
@@ -600,11 +600,11 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AlbumApi(api_client)
-    shared = True # bool |  (optional)
     asset_id = 'asset_id_example' # str | Only returns albums that contain the asset Ignores the shared parameter undefined: get all albums (optional)
+    shared = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_all_albums(shared=shared, asset_id=asset_id)
+        api_response = api_instance.get_all_albums(asset_id=asset_id, shared=shared)
         print("The response of AlbumApi->get_all_albums:\n")
         pprint(api_response)
     except Exception as e:
@@ -617,8 +617,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shared** | **bool**|  | [optional] 
  **asset_id** | **str**| Only returns albums that contain the asset Ignores the shared parameter undefined: get all albums | [optional] 
+ **shared** | **bool**|  | [optional] 
 
 ### Return type
 
