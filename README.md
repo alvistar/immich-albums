@@ -46,13 +46,11 @@ Original path is the path to your local albums.
 If for example your albums are stored in `/home/user/albums` and you mounted that path under docker as `/mnt/albums` 
 you need to pass `/home/user/albums` as `--original-path` and `/mnt/albums` as `--replace-path`.
 
-[!NOTE]
-Api host should be the API endpoint of your Immich instance. 
-Example: `https://localhost:22283/api`
+> [!NOTE]
+> Api host should be the API endpoint of your Immich instance. 
+>
+> Example: `https://localhost:22283/api`
 
-[!WARNING]
-
-Example:
 ```bash
 cd /home/user/albums
 im --api-key YOUR_API_KEY --api-host YOUR_API_HOST --original-path /home/user/albums --replace-path /mnt/albums .
