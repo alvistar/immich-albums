@@ -176,7 +176,7 @@ def set_default(ctx, param, value):
               is_eager=True,
               expose_value=False)
 @click.option('--api-key', help='Immich API key', required=True)
-@click.option('--api-host', help='Immich API Host', required=True)
+@click.option('--api-host', help='Immich API Host endpoint. Ex https://localhost:22283/api', required=True)
 @click.option("--original-path", help="Original path on local host", required=True)
 @click.option("--replace-path", help="Path as seen from immich host", required=True)
 @click.option("-r", "--recursive", help="Recursive", is_flag=True)

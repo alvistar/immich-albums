@@ -38,13 +38,19 @@ im --help
 ```
 The following are required arguments:
 - `--api-key` - Immich API key
-- `--api-host` - Immich API host
+- `--api-host` - Immich API host. Example: `https://localhost:22283/api`
 - `--original-path` - Path to local albums
 - `--replace-path` - Path as seen by Immich host
 
 Original path is the path to your local albums. 
 If for example your albums are stored in `/home/user/albums` and you mounted that path under docker as `/mnt/albums` 
 you need to pass `/home/user/albums` as `--original-path` and `/mnt/albums` as `--replace-path`.
+
+[!NOTE]
+Api host should be the API endpoint of your Immich instance. 
+Example: `https://localhost:22283/api`
+
+[!WARNING]
 
 Example:
 ```bash
