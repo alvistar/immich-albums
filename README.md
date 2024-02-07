@@ -37,8 +37,8 @@ You can get help of various args by running:
 im --help
 ```
 The following are required arguments:
-- `--api-key` - Immich API key
-- `--api-host` - Immich API host
+- `--api-key` - Immich API key (create one from Immich by going to Account Settings > API Keys)
+- `--api-host` - Immich API host (this is your Immich server URL **with `/api` appended to it**)
 - `--original-path` - Path to local albums
 - `--replace-path` - Path as seen by Immich host
 
