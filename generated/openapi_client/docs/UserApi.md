@@ -26,9 +26,8 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.create_profile_image_response_dto import CreateProfileImageResponseDto
 from openapi_client.rest import ApiException
@@ -80,6 +79,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **bytearray**|  | 
@@ -98,6 +98,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -114,9 +115,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.create_user_dto import CreateUserDto
 from openapi_client.models.user_response_dto import UserResponseDto
@@ -169,6 +169,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_user_dto** | [**CreateUserDto**](CreateUserDto.md)|  | 
@@ -187,6 +188,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -203,9 +205,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -252,6 +253,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -268,6 +270,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** |  |  -  |
@@ -275,7 +278,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user**
-> UserResponseDto delete_user(id)
+> UserResponseDto delete_user(id, delete_user_dto)
 
 
 
@@ -284,10 +287,10 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
+from openapi_client.models.delete_user_dto import DeleteUserDto
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -325,9 +328,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.UserApi(api_client)
     id = 'id_example' # str | 
+    delete_user_dto = openapi_client.DeleteUserDto() # DeleteUserDto | 
 
     try:
-        api_response = api_instance.delete_user(id)
+        api_response = api_instance.delete_user(id, delete_user_dto)
         print("The response of UserApi->delete_user:\n")
         pprint(api_response)
     except Exception as e:
@@ -338,9 +342,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **delete_user_dto** | [**DeleteUserDto**](DeleteUserDto.md)|  | 
 
 ### Return type
 
@@ -352,10 +358,11 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -372,9 +379,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
@@ -426,6 +432,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **is_all** | **bool**|  | 
@@ -444,6 +451,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -460,9 +468,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
@@ -512,6 +519,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -528,6 +536,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -544,9 +553,8 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -597,6 +605,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -615,6 +624,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/octet-stream
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -631,9 +641,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
@@ -685,6 +694,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -703,6 +713,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -719,9 +730,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
@@ -773,6 +783,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -791,6 +802,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -807,9 +819,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.update_user_dto import UpdateUserDto
 from openapi_client.models.user_response_dto import UserResponseDto
@@ -862,6 +873,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_user_dto** | [**UpdateUserDto**](UpdateUserDto.md)|  | 
@@ -880,6 +892,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

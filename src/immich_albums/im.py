@@ -5,6 +5,7 @@ import click
 import openapi_client
 from openapi_client import ApiException, AlbumResponseDto
 
+import openapi_client.models
 from yaml import load
 
 try:
@@ -39,10 +40,13 @@ class ImmichAlbums:
     def get_asset_by_original_path(self, original_path) -> Optional[int]:
         with openapi_client.ApiClient(self.api_configuration) as api_client:
             # Create an instance of the API class
-            api_instance = openapi_client.AssetApi(api_client)
+            api_instance = openapi_client.SearchApi(api_client)
 
-            assets = api_instance.search_assets(original_path=original_path)
-            return assets[0].id if len(assets) > 0 else None
+            print(original_path)
+            assets = api_instance.search_metadata(openapi_client.models.MetadataSearchDto(
+                original_path= original_path,
+            )).to_dict()["assets"]["items"]
+            return assets[0]["id"] if len(assets) > 0 else None
 
     def create_album(self, album_name, assets_ids) -> str:
         with openapi_client.ApiClient(self.api_configuration) as api_client:

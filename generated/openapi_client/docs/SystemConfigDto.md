@@ -2,9 +2,11 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ffmpeg** | [**SystemConfigFFmpegDto**](SystemConfigFFmpegDto.md) |  | 
+**image** | [**SystemConfigImageDto**](SystemConfigImageDto.md) |  | 
 **job** | [**SystemConfigJobDto**](SystemConfigJobDto.md) |  | 
 **library** | [**SystemConfigLibraryDto**](SystemConfigLibraryDto.md) |  | 
 **logging** | [**SystemConfigLoggingDto**](SystemConfigLoggingDto.md) |  | 
@@ -17,8 +19,8 @@ Name | Type | Description | Notes
 **server** | [**SystemConfigServerDto**](SystemConfigServerDto.md) |  | 
 **storage_template** | [**SystemConfigStorageTemplateDto**](SystemConfigStorageTemplateDto.md) |  | 
 **theme** | [**SystemConfigThemeDto**](SystemConfigThemeDto.md) |  | 
-**thumbnail** | [**SystemConfigThumbnailDto**](SystemConfigThumbnailDto.md) |  | 
 **trash** | [**SystemConfigTrashDto**](SystemConfigTrashDto.md) |  | 
+**user** | [**SystemConfigUserDto**](SystemConfigUserDto.md) |  | 
 
 ## Example
 
@@ -30,12 +32,12 @@ json = "{}"
 # create an instance of SystemConfigDto from a JSON string
 system_config_dto_instance = SystemConfigDto.from_json(json)
 # print the JSON string representation of the object
-print SystemConfigDto.to_json()
+print(SystemConfigDto.to_json())
 
 # convert the object into a dict
 system_config_dto_dict = system_config_dto_instance.to_dict()
 # create an instance of SystemConfigDto from a dict
-system_config_dto_form_dict = system_config_dto.from_dict(system_config_dto_dict)
+system_config_dto_from_dict = SystemConfigDto.from_dict(system_config_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

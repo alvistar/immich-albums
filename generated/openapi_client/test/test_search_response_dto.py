@@ -91,7 +91,7 @@ class TestSearchResponseDto(unittest.TestCase):
                                     library_id = '', 
                                     live_photo_video_id = '', 
                                     original_file_name = '', 
-                                    original_path = '', 
+                                    originalPath = '', 
                                     owner = openapi_client.models.user_response_dto.UserResponseDto(
                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         deleted_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -215,7 +215,7 @@ class TestSearchResponseDto(unittest.TestCase):
                             library_id = '', 
                             live_photo_video_id = '', 
                             original_file_name = '', 
-                            original_path = '', 
+                            originalPath = '', 
                             owner = openapi_client.models.user_response_dto.UserResponseDto(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 deleted_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -318,7 +318,7 @@ class TestSearchResponseDto(unittest.TestCase):
                                     library_id = '', 
                                     live_photo_video_id = '', 
                                     original_file_name = '', 
-                                    original_path = '', 
+                                    originalPath = '', 
                                     owner = openapi_client.models.user_response_dto.UserResponseDto(
                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         deleted_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -442,7 +442,7 @@ class TestSearchResponseDto(unittest.TestCase):
                             library_id = '', 
                             live_photo_video_id = '', 
                             original_file_name = '', 
-                            original_path = '', 
+                            originalPath = '', 
                             owner = openapi_client.models.user_response_dto.UserResponseDto(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 deleted_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

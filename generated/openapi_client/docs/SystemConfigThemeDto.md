@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **custom_css** | **str** |  | 
@@ -16,12 +17,12 @@ json = "{}"
 # create an instance of SystemConfigThemeDto from a JSON string
 system_config_theme_dto_instance = SystemConfigThemeDto.from_json(json)
 # print the JSON string representation of the object
-print SystemConfigThemeDto.to_json()
+print(SystemConfigThemeDto.to_json())
 
 # convert the object into a dict
 system_config_theme_dto_dict = system_config_theme_dto_instance.to_dict()
 # create an instance of SystemConfigThemeDto from a dict
-system_config_theme_dto_form_dict = system_config_theme_dto.from_dict(system_config_theme_dto_dict)
+system_config_theme_dto_from_dict = SystemConfigThemeDto.from_dict(system_config_theme_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

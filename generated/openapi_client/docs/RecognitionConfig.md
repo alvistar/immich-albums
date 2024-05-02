@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enabled** | **bool** |  | 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of RecognitionConfig from a JSON string
 recognition_config_instance = RecognitionConfig.from_json(json)
 # print the JSON string representation of the object
-print RecognitionConfig.to_json()
+print(RecognitionConfig.to_json())
 
 # convert the object into a dict
 recognition_config_dict = recognition_config_instance.to_dict()
 # create an instance of RecognitionConfig from a dict
-recognition_config_form_dict = recognition_config.from_dict(recognition_config_dict)
+recognition_config_from_dict = RecognitionConfig.from_dict(recognition_config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

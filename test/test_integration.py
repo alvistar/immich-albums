@@ -181,7 +181,7 @@ def test_create_albums(immich_app, remove_album_files):
 
     immich_albums.create_albums_from_folder(
         path=abs_path,
-        original_path=abs_path,
+        originalPath=abs_path,
         replace_path="/mnt/ext_library",
         recursive=True,
     )

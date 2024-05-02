@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **city** | **str** |  | [optional] 
@@ -36,12 +37,12 @@ json = "{}"
 # create an instance of ExifResponseDto from a JSON string
 exif_response_dto_instance = ExifResponseDto.from_json(json)
 # print the JSON string representation of the object
-print ExifResponseDto.to_json()
+print(ExifResponseDto.to_json())
 
 # convert the object into a dict
 exif_response_dto_dict = exif_response_dto_instance.to_dict()
 # create an instance of ExifResponseDto from a dict
-exif_response_dto_form_dict = exif_response_dto.from_dict(exif_response_dto_dict)
+exif_response_dto_from_dict = ExifResponseDto.from_dict(exif_response_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

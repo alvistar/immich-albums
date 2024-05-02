@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **album_name** | **str** |  | 
@@ -19,12 +20,12 @@ json = "{}"
 # create an instance of CreateAlbumDto from a JSON string
 create_album_dto_instance = CreateAlbumDto.from_json(json)
 # print the JSON string representation of the object
-print CreateAlbumDto.to_json()
+print(CreateAlbumDto.to_json())
 
 # convert the object into a dict
 create_album_dto_dict = create_album_dto_instance.to_dict()
 # create an instance of CreateAlbumDto from a dict
-create_album_dto_form_dict = create_album_dto.from_dict(create_album_dto_dict)
+create_album_dto_from_dict = CreateAlbumDto.from_dict(create_album_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
