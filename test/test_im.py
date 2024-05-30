@@ -21,10 +21,10 @@ def create_albums_folders_fixture(tmp_path: pathlib.Path):
     return [str(p) for p in folders]
 
 
-def test_recursion_v2(albums_folders: list[pathlib.Path]):
+def test_recursion(albums_folders: list[pathlib.Path]):
+    immich_albums = ImmichAlbums(None, None)
     with mock.patch.object(ImmichAlbums,
                            "create_album_from_folder") as mock_method:
-        immich_albums = ImmichAlbums(None, None)
         immich_albums.create_albums_from_folder(
             path=str(albums_folders[0]),
             original_path="orignal_path",
