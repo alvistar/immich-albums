@@ -7,14 +7,14 @@ from testcontainers.compose import DockerCompose
 from testcontainers.core.waiting_utils import wait_for_logs
 import openapi_client
 from openapi_client import ApiException
-from src.immich_albums.im import ImmichAlbums
+from immich_albums.im import ImmichAlbums
 
 db_user = "postgres"
 db_password = "postgres"
 db_name = "immich"
 
 
-def init_admin_user() -> Tuple[str, str]:
+def init_admin_user() -> Tuple[str, str, str]:
     api_configuration = openapi_client.Configuration(
         host="http://localhost:2283/api",
     )
@@ -84,10 +84,10 @@ def init_admin_user() -> Tuple[str, str]:
         except ApiException as e:
             print(f"Exception while creating API key: {e}\n")
 
-    return access_token, api_key
+    return access_token, api_key, admin_id
 
 
-def setup_external_library(token: str):
+def setup_external_library(token: str, owner_id: str):
     api_configuration = openapi_client.Configuration(
         host="http://localhost:2283/api",
         api_key={'api_key': token})
@@ -99,8 +99,9 @@ def setup_external_library(token: str):
 
         dto = openapi_client.CreateLibraryDto(
             name="My Library",
+            owner_id=owner_id,
+            type=openapi_client.LibraryType.EXTERNAL,
             import_paths=["/mnt/ext_library"],
-            type=openapi_client.LibraryType.EXTERNAL
         )
 
         try:
@@ -148,8 +149,8 @@ def immich_app():
         stdout, stderr = compose.get_logs()
         print(stdout.decode('utf-8'))
 
-        access_token, api_key = init_admin_user()
-        setup_external_library(api_key)
+        access_token, api_key, admin_id = init_admin_user()
+        setup_external_library(api_key, admin_id)
 
         yield api_key
 
