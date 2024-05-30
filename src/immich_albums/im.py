@@ -145,7 +145,7 @@ class ImmichAlbums:
                 if folder_name in skip:
                     print(f"Skipping folder: {folder_name}")
                     continue
-                print(f"Processing folder: {folder_name}\n")
+                print(f"\nProcessing folder: {folder_name}")
                 self.create_album_from_folder(path, original_path, replace_path, dry_run, skip_existing=skip_existing)
 
                 for sub_folder in sub_folders:
