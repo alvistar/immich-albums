@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accel** | [**TranscodeHWAccel**](TranscodeHWAccel.md) |  | 
@@ -35,12 +36,12 @@ json = "{}"
 # create an instance of SystemConfigFFmpegDto from a JSON string
 system_config_f_fmpeg_dto_instance = SystemConfigFFmpegDto.from_json(json)
 # print the JSON string representation of the object
-print SystemConfigFFmpegDto.to_json()
+print(SystemConfigFFmpegDto.to_json())
 
 # convert the object into a dict
 system_config_f_fmpeg_dto_dict = system_config_f_fmpeg_dto_instance.to_dict()
 # create an instance of SystemConfigFFmpegDto from a dict
-system_config_f_fmpeg_dto_form_dict = system_config_f_fmpeg_dto.from_dict(system_config_f_fmpeg_dto_dict)
+system_config_f_fmpeg_dto_from_dict = SystemConfigFFmpegDto.from_dict(system_config_f_fmpeg_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

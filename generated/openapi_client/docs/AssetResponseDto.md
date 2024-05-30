@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **checksum** | **str** | base64 encoded sha1 hash | 
@@ -14,10 +15,10 @@ Name | Type | Description | Notes
 **has_metadata** | **bool** |  | 
 **id** | **str** |  | 
 **is_archived** | **bool** |  | 
-**is_external** | **bool** |  | 
+**is_external** | **bool** | This property was deprecated in v1.104.0 | [optional] 
 **is_favorite** | **bool** |  | 
 **is_offline** | **bool** |  | 
-**is_read_only** | **bool** |  | 
+**is_read_only** | **bool** | This property was deprecated in v1.104.0 | [optional] 
 **is_trashed** | **bool** |  | 
 **library_id** | **str** |  | 
 **live_photo_video_id** | **str** |  | [optional] 
@@ -47,12 +48,12 @@ json = "{}"
 # create an instance of AssetResponseDto from a JSON string
 asset_response_dto_instance = AssetResponseDto.from_json(json)
 # print the JSON string representation of the object
-print AssetResponseDto.to_json()
+print(AssetResponseDto.to_json())
 
 # convert the object into a dict
 asset_response_dto_dict = asset_response_dto_instance.to_dict()
 # create an instance of AssetResponseDto from a dict
-asset_response_dto_form_dict = asset_response_dto.from_dict(asset_response_dto_dict)
+asset_response_dto_from_dict = AssetResponseDto.from_dict(asset_response_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

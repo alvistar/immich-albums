@@ -6,12 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_library**](LibraryApi.md#create_library) | **POST** /library | 
 [**delete_library**](LibraryApi.md#delete_library) | **DELETE** /library/{id} | 
-[**get_libraries**](LibraryApi.md#get_libraries) | **GET** /library | 
-[**get_library_info**](LibraryApi.md#get_library_info) | **GET** /library/{id} | 
+[**get_all_libraries**](LibraryApi.md#get_all_libraries) | **GET** /library | 
+[**get_library**](LibraryApi.md#get_library) | **GET** /library/{id} | 
 [**get_library_statistics**](LibraryApi.md#get_library_statistics) | **GET** /library/{id}/statistics | 
 [**remove_offline_files**](LibraryApi.md#remove_offline_files) | **POST** /library/{id}/removeOffline | 
 [**scan_library**](LibraryApi.md#scan_library) | **POST** /library/{id}/scan | 
 [**update_library**](LibraryApi.md#update_library) | **PUT** /library/{id} | 
+[**validate**](LibraryApi.md#validate) | **POST** /library/{id}/validate | 
 
 
 # **create_library**
@@ -24,9 +25,8 @@ Method | HTTP request | Description
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.create_library_dto import CreateLibraryDto
 from openapi_client.models.library_response_dto import LibraryResponseDto
@@ -79,6 +79,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_library_dto** | [**CreateLibraryDto**](CreateLibraryDto.md)|  | 
@@ -97,6 +98,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -113,9 +115,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -164,6 +165,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -182,14 +184,15 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**204** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_libraries**
-> List[LibraryResponseDto] get_libraries()
+# **get_all_libraries**
+> List[LibraryResponseDto] get_all_libraries(type=type)
 
 
 
@@ -198,11 +201,11 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.library_response_dto import LibraryResponseDto
+from openapi_client.models.library_type import LibraryType
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -238,19 +241,24 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LibraryApi(api_client)
+    type = openapi_client.LibraryType() # LibraryType |  (optional)
 
     try:
-        api_response = api_instance.get_libraries()
-        print("The response of LibraryApi->get_libraries:\n")
+        api_response = api_instance.get_all_libraries(type=type)
+        print("The response of LibraryApi->get_all_libraries:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryApi->get_libraries: %s\n" % e)
+        print("Exception when calling LibraryApi->get_all_libraries: %s\n" % e)
 ```
 
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | [**LibraryType**](.md)|  | [optional] 
 
 ### Return type
 
@@ -266,14 +274,15 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_library_info**
-> LibraryResponseDto get_library_info(id)
+# **get_library**
+> LibraryResponseDto get_library(id)
 
 
 
@@ -282,9 +291,8 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.library_response_dto import LibraryResponseDto
 from openapi_client.rest import ApiException
@@ -325,16 +333,17 @@ with openapi_client.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        api_response = api_instance.get_library_info(id)
-        print("The response of LibraryApi->get_library_info:\n")
+        api_response = api_instance.get_library(id)
+        print("The response of LibraryApi->get_library:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryApi->get_library_info: %s\n" % e)
+        print("Exception when calling LibraryApi->get_library: %s\n" % e)
 ```
 
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -354,6 +363,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -370,9 +380,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.library_stats_response_dto import LibraryStatsResponseDto
 from openapi_client.rest import ApiException
@@ -424,6 +433,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -442,6 +452,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -458,9 +469,8 @@ Name | Type | Description  | Notes
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -509,6 +519,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -527,9 +538,10 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** |  |  -  |
+**204** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -543,9 +555,8 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.scan_library_dto import ScanLibraryDto
 from openapi_client.rest import ApiException
@@ -596,6 +607,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -615,9 +627,10 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** |  |  -  |
+**204** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -631,9 +644,8 @@ void (empty response body)
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.library_response_dto import LibraryResponseDto
 from openapi_client.models.update_library_dto import UpdateLibraryDto
@@ -687,6 +699,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
@@ -706,6 +719,99 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **validate**
+> ValidateLibraryResponseDto validate(id, validate_library_dto)
+
+
+
+### Example
+
+* Api Key Authentication (cookie):
+* Api Key Authentication (api_key):
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import openapi_client
+from openapi_client.models.validate_library_dto import ValidateLibraryDto
+from openapi_client.models.validate_library_response_dto import ValidateLibraryResponseDto
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: cookie
+configuration.api_key['cookie'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookie'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearer
+configuration = openapi_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LibraryApi(api_client)
+    id = 'id_example' # str | 
+    validate_library_dto = openapi_client.ValidateLibraryDto() # ValidateLibraryDto | 
+
+    try:
+        api_response = api_instance.validate(id, validate_library_dto)
+        print("The response of LibraryApi->validate:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LibraryApi->validate: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **validate_library_dto** | [**ValidateLibraryDto**](ValidateLibraryDto.md)|  | 
+
+### Return type
+
+[**ValidateLibraryResponseDto**](ValidateLibraryResponseDto.md)
+
+### Authorization
+
+[cookie](../README.md#cookie), [api_key](../README.md#api_key), [bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

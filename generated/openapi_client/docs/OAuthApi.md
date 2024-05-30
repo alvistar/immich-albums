@@ -5,7 +5,6 @@ All URIs are relative to */api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**finish_o_auth**](OAuthApi.md#finish_o_auth) | **POST** /oauth/callback | 
-[**generate_o_auth_config**](OAuthApi.md#generate_o_auth_config) | **POST** /oauth/config | 
 [**link_o_auth_account**](OAuthApi.md#link_o_auth_account) | **POST** /oauth/link | 
 [**redirect_o_auth_to_mobile**](OAuthApi.md#redirect_o_auth_to_mobile) | **GET** /oauth/mobile-redirect | 
 [**start_o_auth**](OAuthApi.md#start_o_auth) | **POST** /oauth/authorize | 
@@ -19,9 +18,8 @@ Method | HTTP request | Description
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.login_response_dto import LoginResponseDto
 from openapi_client.models.o_auth_callback_dto import OAuthCallbackDto
@@ -53,6 +51,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_callback_dto** | [**OAuthCallbackDto**](OAuthCallbackDto.md)|  | 
@@ -71,73 +70,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** |  |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **generate_o_auth_config**
-> OAuthConfigResponseDto generate_o_auth_config(o_auth_config_dto)
-
-
-
-@deprecated use feature flags and /oauth/authorize
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.models.o_auth_config_dto import OAuthConfigDto
-from openapi_client.models.o_auth_config_response_dto import OAuthConfigResponseDto
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "/api"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.OAuthApi(api_client)
-    o_auth_config_dto = openapi_client.OAuthConfigDto() # OAuthConfigDto | 
-
-    try:
-        api_response = api_instance.generate_o_auth_config(o_auth_config_dto)
-        print("The response of OAuthApi->generate_o_auth_config:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OAuthApi->generate_o_auth_config: %s\n" % e)
-```
-
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **o_auth_config_dto** | [**OAuthConfigDto**](OAuthConfigDto.md)|  | 
-
-### Return type
-
-[**OAuthConfigResponseDto**](OAuthConfigResponseDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -154,9 +87,8 @@ No authorization required
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.o_auth_callback_dto import OAuthCallbackDto
 from openapi_client.models.user_response_dto import UserResponseDto
@@ -209,6 +141,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_callback_dto** | [**OAuthCallbackDto**](OAuthCallbackDto.md)|  | 
@@ -227,6 +160,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -240,9 +174,8 @@ Name | Type | Description  | Notes
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -268,6 +201,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -284,6 +218,7 @@ No authorization required
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -297,9 +232,8 @@ No authorization required
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.o_auth_authorize_response_dto import OAuthAuthorizeResponseDto
 from openapi_client.models.o_auth_config_dto import OAuthConfigDto
@@ -331,6 +265,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **o_auth_config_dto** | [**OAuthConfigDto**](OAuthConfigDto.md)|  | 
@@ -349,6 +284,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -365,9 +301,8 @@ No authorization required
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.user_response_dto import UserResponseDto
 from openapi_client.rest import ApiException
@@ -417,6 +352,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -433,6 +369,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |

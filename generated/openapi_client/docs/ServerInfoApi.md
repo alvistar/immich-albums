@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**get_supported_media_types**](ServerInfoApi.md#get_supported_media_types) | **GET** /server-info/media-types | 
 [**get_theme**](ServerInfoApi.md#get_theme) | **GET** /server-info/theme | 
 [**ping_server**](ServerInfoApi.md#ping_server) | **GET** /server-info/ping | 
-[**set_admin_onboarding**](ServerInfoApi.md#set_admin_onboarding) | **POST** /server-info/admin-onboarding | 
 
 
 # **get_server_config**
@@ -22,9 +21,8 @@ Method | HTTP request | Description
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_config_dto import ServerConfigDto
 from openapi_client.rest import ApiException
@@ -53,6 +51,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -69,6 +68,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -82,9 +82,8 @@ No authorization required
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_features_dto import ServerFeaturesDto
 from openapi_client.rest import ApiException
@@ -113,6 +112,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -129,6 +129,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -145,9 +146,8 @@ No authorization required
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_info_response_dto import ServerInfoResponseDto
 from openapi_client.rest import ApiException
@@ -197,6 +197,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -213,6 +214,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -229,9 +231,8 @@ This endpoint does not need any parameter.
 * Api Key Authentication (cookie):
 * Api Key Authentication (api_key):
 * Bearer (JWT) Authentication (bearer):
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_stats_response_dto import ServerStatsResponseDto
 from openapi_client.rest import ApiException
@@ -281,6 +282,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -297,6 +299,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -310,9 +313,8 @@ This endpoint does not need any parameter.
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_version_response_dto import ServerVersionResponseDto
 from openapi_client.rest import ApiException
@@ -341,6 +343,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -357,6 +360,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -370,9 +374,8 @@ No authorization required
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_media_types_response_dto import ServerMediaTypesResponseDto
 from openapi_client.rest import ApiException
@@ -401,6 +404,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -417,6 +421,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -430,9 +435,8 @@ No authorization required
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_theme_dto import ServerThemeDto
 from openapi_client.rest import ApiException
@@ -461,6 +465,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -477,6 +482,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -490,9 +496,8 @@ No authorization required
 
 ### Example
 
+
 ```python
-import time
-import os
 import openapi_client
 from openapi_client.models.server_ping_response import ServerPingResponse
 from openapi_client.rest import ApiException
@@ -521,6 +526,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -537,90 +543,10 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **set_admin_onboarding**
-> set_admin_onboarding()
-
-
-
-### Example
-
-* Api Key Authentication (cookie):
-* Api Key Authentication (api_key):
-* Bearer (JWT) Authentication (bearer):
-```python
-import time
-import os
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: cookie
-configuration.api_key['cookie'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookie'] = 'Bearer'
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# Configure Bearer authorization (JWT): bearer
-configuration = openapi_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.ServerInfoApi(api_client)
-
-    try:
-        api_instance.set_admin_onboarding()
-    except Exception as e:
-        print("Exception when calling ServerInfoApi->set_admin_onboarding: %s\n" % e)
-```
-
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[cookie](../README.md#cookie), [api_key](../README.md#api_key), [bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

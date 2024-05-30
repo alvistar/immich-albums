@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_download** | **bool** |  | [optional] 
@@ -22,12 +23,12 @@ json = "{}"
 # create an instance of SharedLinkEditDto from a JSON string
 shared_link_edit_dto_instance = SharedLinkEditDto.from_json(json)
 # print the JSON string representation of the object
-print SharedLinkEditDto.to_json()
+print(SharedLinkEditDto.to_json())
 
 # convert the object into a dict
 shared_link_edit_dto_dict = shared_link_edit_dto_instance.to_dict()
 # create an instance of SharedLinkEditDto from a dict
-shared_link_edit_dto_form_dict = shared_link_edit_dto.from_dict(shared_link_edit_dto_dict)
+shared_link_edit_dto_from_dict = SharedLinkEditDto.from_dict(shared_link_edit_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
