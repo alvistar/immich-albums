@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_ids** | **List[str]** |  | 
@@ -17,12 +18,12 @@ json = "{}"
 # create an instance of AssetJobsDto from a JSON string
 asset_jobs_dto_instance = AssetJobsDto.from_json(json)
 # print the JSON string representation of the object
-print AssetJobsDto.to_json()
+print(AssetJobsDto.to_json())
 
 # convert the object into a dict
 asset_jobs_dto_dict = asset_jobs_dto_instance.to_dict()
 # create an instance of AssetJobsDto from a dict
-asset_jobs_dto_form_dict = asset_jobs_dto.from_dict(asset_jobs_dto_dict)
+asset_jobs_dto_from_dict = AssetJobsDto.from_dict(asset_jobs_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

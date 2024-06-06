@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **background_task** | [**JobStatusDto**](JobStatusDto.md) |  | 
@@ -10,6 +11,7 @@ Name | Type | Description | Notes
 **library** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **metadata_extraction** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **migration** | [**JobStatusDto**](JobStatusDto.md) |  | 
+**notifications** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **search** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **sidecar** | [**JobStatusDto**](JobStatusDto.md) |  | 
 **smart_search** | [**JobStatusDto**](JobStatusDto.md) |  | 
@@ -27,12 +29,12 @@ json = "{}"
 # create an instance of AllJobStatusResponseDto from a JSON string
 all_job_status_response_dto_instance = AllJobStatusResponseDto.from_json(json)
 # print the JSON string representation of the object
-print AllJobStatusResponseDto.to_json()
+print(AllJobStatusResponseDto.to_json())
 
 # convert the object into a dict
 all_job_status_response_dto_dict = all_job_status_response_dto_instance.to_dict()
 # create an instance of AllJobStatusResponseDto from a dict
-all_job_status_response_dto_form_dict = all_job_status_response_dto.from_dict(all_job_status_response_dto_dict)
+all_job_status_response_dto_from_dict = AllJobStatusResponseDto.from_dict(all_job_status_response_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

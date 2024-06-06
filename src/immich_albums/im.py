@@ -3,7 +3,7 @@ from typing import Optional
 import os
 import click
 import openapi_client
-from openapi_client import ApiException, AlbumResponseDto
+from openapi_client import ApiException, AlbumResponseDto, MetadataSearchDto
 
 from yaml import load
 
@@ -39,10 +39,11 @@ class ImmichAlbums:
     def get_asset_by_original_path(self, original_path) -> Optional[int]:
         with openapi_client.ApiClient(self.api_configuration) as api_client:
             # Create an instance of the API class
-            api_instance = openapi_client.AssetApi(api_client)
+            api_instance = openapi_client.SearchApi(api_client)
 
-            assets = api_instance.search_assets(original_path=original_path)
-            return assets[0].id if len(assets) > 0 else None
+            dto = MetadataSearchDto(original_path=original_path)
+            assets = api_instance.search_metadata(dto).to_dict()["assets"]["items"]
+            return assets[0]["id"] if len(assets) > 0 else None
 
     def create_album(self, album_name, assets_ids) -> str:
         with openapi_client.ApiClient(self.api_configuration) as api_client:
@@ -144,7 +145,7 @@ class ImmichAlbums:
                 if folder_name in skip:
                     print(f"Skipping folder: {folder_name}")
                     continue
-                print(f"Processing folder: {folder_name}\n")
+                print(f"\nProcessing folder: {folder_name}")
                 self.create_album_from_folder(path, original_path, replace_path, dry_run, skip_existing=skip_existing)
 
                 for sub_folder in sub_folders:

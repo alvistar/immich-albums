@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auto_launch** | **bool** |  | 
@@ -9,6 +10,7 @@ Name | Type | Description | Notes
 **button_text** | **str** |  | 
 **client_id** | **str** |  | 
 **client_secret** | **str** |  | 
+**default_storage_quota** | **float** |  | 
 **enabled** | **bool** |  | 
 **issuer_url** | **str** |  | 
 **mobile_override_enabled** | **bool** |  | 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **scope** | **str** |  | 
 **signing_algorithm** | **str** |  | 
 **storage_label_claim** | **str** |  | 
+**storage_quota_claim** | **str** |  | 
 
 ## Example
 
@@ -27,12 +30,12 @@ json = "{}"
 # create an instance of SystemConfigOAuthDto from a JSON string
 system_config_o_auth_dto_instance = SystemConfigOAuthDto.from_json(json)
 # print the JSON string representation of the object
-print SystemConfigOAuthDto.to_json()
+print(SystemConfigOAuthDto.to_json())
 
 # convert the object into a dict
 system_config_o_auth_dto_dict = system_config_o_auth_dto_instance.to_dict()
 # create an instance of SystemConfigOAuthDto from a dict
-system_config_o_auth_dto_form_dict = system_config_o_auth_dto.from_dict(system_config_o_auth_dto_dict)
+system_config_o_auth_dto_from_dict = SystemConfigOAuthDto.from_dict(system_config_o_auth_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

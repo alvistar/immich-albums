@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **album** | [**AlbumResponseDto**](AlbumResponseDto.md) |  | [optional] 
@@ -29,12 +30,12 @@ json = "{}"
 # create an instance of SharedLinkResponseDto from a JSON string
 shared_link_response_dto_instance = SharedLinkResponseDto.from_json(json)
 # print the JSON string representation of the object
-print SharedLinkResponseDto.to_json()
+print(SharedLinkResponseDto.to_json())
 
 # convert the object into a dict
 shared_link_response_dto_dict = shared_link_response_dto_instance.to_dict()
 # create an instance of SharedLinkResponseDto from a dict
-shared_link_response_dto_form_dict = shared_link_response_dto.from_dict(shared_link_response_dto_dict)
+shared_link_response_dto_from_dict = SharedLinkResponseDto.from_dict(shared_link_response_dto_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

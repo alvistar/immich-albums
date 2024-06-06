@@ -72,6 +72,13 @@ Alternatively you can pass config file path as argument:
 im --config /path/to/config/file
 ```
 
+## Updating openapi client:
+
+```bash
+openapi-generator-cli generate -g python -o generated/openapi_client -i immich-openapi-specs.json -p packageVersion=1.105.1
+poetry lock --no-update
+```
+
 ## Contributing
 Contributions to Immich Albums are welcome! 
 
