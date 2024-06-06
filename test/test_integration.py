@@ -30,9 +30,7 @@ def init_admin_user() -> Tuple[str, str, str]:
 
         api_instance = openapi_client.AuthenticationApi(api_client)
         signup_dto = openapi_client.SignUpDto(
-            email=email,
-            name=admin_name,
-            password=password
+            email=email, name=admin_name, password=password
         )
         try:
             print("Creating admin user...\n")
@@ -45,8 +43,8 @@ def init_admin_user() -> Tuple[str, str, str]:
         try:
             print("Logging in admin user...\n")
             login_credentials = openapi_client.LoginCredentialDto(
-                email=email,
-                password=password)
+                email=email, password=password
+            )
             api_response = api_instance.login(login_credentials)
             print(f"Logged in successfully with token {api_response.access_token}\n")
             access_token = api_response.access_token
@@ -54,8 +52,7 @@ def init_admin_user() -> Tuple[str, str, str]:
             print(f"Exception while logging in admin: {e}\n")
 
     api_configuration = openapi_client.Configuration(
-        host="http://localhost:2283/api",
-        access_token=access_token
+        host="http://localhost:2283/api", access_token=access_token
     )
 
     with openapi_client.ApiClient(api_configuration) as api_client:
@@ -63,8 +60,8 @@ def init_admin_user() -> Tuple[str, str, str]:
         try:
             print("Setting external path\n")
             dto = openapi_client.UpdateUserDto(
-                id=admin_id,
-                external_path="/mnt/ext_library")
+                id=admin_id, external_path="/mnt/ext_library"
+            )
 
             response = api_instance.update_user(dto)
             print("External path set successfully.\n")
@@ -89,8 +86,8 @@ def init_admin_user() -> Tuple[str, str, str]:
 
 def setup_external_library(token: str, owner_id: str):
     api_configuration = openapi_client.Configuration(
-        host="http://localhost:2283/api",
-        api_key={'api_key': token})
+        host="http://localhost:2283/api", api_key={"api_key": token}
+    )
 
     library_id = None
 
@@ -123,8 +120,8 @@ def setup_external_library(token: str, owner_id: str):
 
 def wait_for_jobs(token: str):
     api_configuration = openapi_client.Configuration(
-        host="http://localhost:2283/api",
-        api_key={'api_key': token})
+        host="http://localhost:2283/api", api_key={"api_key": token}
+    )
 
     with openapi_client.ApiClient(api_configuration) as api_client:
         api_instance = openapi_client.JobApi(api_client)
@@ -133,7 +130,9 @@ def wait_for_jobs(token: str):
             print("Waiting for jobs to finish\n")
             response = api_instance.get_all_jobs_status()
             while response.library.job_counts.active > 0:
-                print(f"Waiting for {response.library.job_counts.active} jobs to finish\n")
+                print(
+                    f"Waiting for {response.library.job_counts.active} jobs to finish\n"
+                )
                 response = api_instance.get_all_jobs_status()
 
         except ApiException as e:
@@ -147,7 +146,7 @@ def immich_app():
         # Wait for the container to start
         delay = wait_for_logs(compose, "Immich Server is listening on")
         stdout, stderr = compose.get_logs()
-        print(stdout.decode('utf-8'))
+        print(stdout.decode("utf-8"))
 
         access_token, api_key, admin_id = init_admin_user()
         setup_external_library(api_key, admin_id)
@@ -158,10 +157,12 @@ def immich_app():
 # Define a fixture that will search for and delete `.album` files in a specified directory
 @pytest.fixture
 def remove_album_files(request):
-    directory_path = Path('immich-app/ext_library')  # Change this to your target directory
+    directory_path = Path(
+        "immich-app/ext_library"
+    )  # Change this to your target directory
 
     def teardown():
-        for path in directory_path.rglob('.album'):
+        for path in directory_path.rglob(".album"):
             try:
                 path.unlink()
                 print(f"Deleted {path}")
@@ -178,7 +179,7 @@ def test_create_albums(immich_app, remove_album_files):
 
     abs_path = os.path.abspath("./immich-app/ext_library")
 
-    print (f"Creating albums from {abs_path}\n")
+    print(f"Creating albums from {abs_path}\n")
 
     immich_albums.create_albums_from_folder(
         path=abs_path,
@@ -188,8 +189,8 @@ def test_create_albums(immich_app, remove_album_files):
     )
 
     api_configuration = openapi_client.Configuration(
-        host="http://localhost:2283/api",
-        api_key={'api_key': api_key})
+        host="http://localhost:2283/api", api_key={"api_key": api_key}
+    )
 
     with openapi_client.ApiClient(api_configuration) as api_client:
         api_instance = openapi_client.AlbumApi(api_client)
@@ -206,6 +207,3 @@ def test_create_albums(immich_app, remove_album_files):
 
         except ApiException as e:
             print(f"Exception while getting albums: {e}\n")
-
-
-
