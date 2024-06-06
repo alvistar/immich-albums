@@ -153,6 +153,7 @@ class ImmichAlbums:
                     self.create_albums_from_folder(path, original_path, replace_path, True, dry_run,
                                                    skip=skip,
                                                    skip_existing=skip_existing)
+                break  # Avoid walking over sub folders of path which are visited by the for loop.
         else:
             print(f"Processing folder: {path}\n")
             self.create_album_from_folder(path, original_path, replace_path, dry_run, skip_existing=skip_existing)
