@@ -37,10 +37,10 @@ You can get help of various args by running:
 im --help
 ```
 The following are required arguments:
-- `--api-key` - Immich API key
-- `--api-host` - Immich API host. Example: `https://localhost:22283/api`
-- `--original-path` - Path to local albums
-- `--replace-path` - Path as seen by Immich host
+- `--api_key` - Immich API key
+- `--api_host` - Immich API host. Example: `https://localhost:22283/api`
+- `--original_path` - Path to local albums
+- `--replace_path` - Path as seen by Immich host
 
 Original path is the path to your local albums. 
 If for example your albums are stored in `/home/user/albums` and you mounted that path under docker as `/mnt/albums` 
@@ -61,11 +61,16 @@ Default config file name is `config.yaml` and it should be placed in your home d
 
 Example config file:
 ```yaml
-api-key: YOUR_API_KEY
-api-host: YOUR_API_HOST
-original-path: /path/to/local/albums
-replace-path: /path/as/seen/by/immich
+api_key: YOUR_API_KEY
+api_host: YOUR_API_HOST
+original_path: /path/to/local/albums
+replace_path: /path/as/seen/by/immich
 ```
+
+> [!NOTE]
+> Take care of the underscore. It should be `api_key` and not `api-key`.
+>
+
 
 Alternatively you can pass config file path as argument:
 ```bash
