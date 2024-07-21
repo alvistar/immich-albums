@@ -6,12 +6,32 @@ import openapi_client
 from openapi_client import ApiException, AlbumResponseDto, MetadataSearchDto
 
 from yaml import load
+import logging
+import os 
+from dataclasses import dataclass
 
 try:
     from yaml import CLoader as Loader
 except ImportError:
     from yaml import Loader
 
+log_level = logging.INFO 
+if os.getenv('DEBUG'):
+    log_level = logging.DEBUG 
+
+logging.basicConfig(level=log_level)
+
+logger = logging.getLogger("im-albums")
+
+formatter_all = logging.Formatter('%(asctime)s:%(levelname)s:%(message)s')
+fh_debug = logging.FileHandler('immich-albums.all.log')
+fh_debug.setLevel(logging.DEBUG)
+fh_debug.setFormatter(formatter_all)
+fh_info = logging.FileHandler('immich-albums.info.log')
+fh_info.setLevel(logging.INFO)
+fh_info.setFormatter(formatter_all)
+logger.addHandler(fh_debug)
+logger.addHandler(fh_info)
 
 def write_album_id(path, id):
     with open(os.path.join(path, ".album"), "w") as f:
@@ -25,6 +45,11 @@ def read_album_id(path) -> Optional[str]:
     except FileNotFoundError:
         return None
 
+@dataclass
+class ProcessingResults:
+    added_files: int
+    missing_files: int 
+    album_name: str 
 
 class ImmichAlbums:
     def __init__(self, api_host, api_key):
@@ -51,7 +76,7 @@ class ImmichAlbums:
             api_instance = openapi_client.AlbumApi(api_client)
 
         try:
-            print(f"Creating album {album_name}\n")
+            logger.debug(f"Creating album {album_name}")
 
             create_album_request = openapi_client.CreateAlbumDto(
                 album_name=album_name,
@@ -62,13 +87,13 @@ class ImmichAlbums:
                 create_album_request
             )
 
-            print(f"Album id {api_response.id}")
-            print("The response of create album:\n")
-            print(api_response)
+            logger.debug(f"Album id {api_response.id}")
+            logger.debug("The response of create album:")
+            logger.debug(api_response)
 
             return api_response.id
         except ApiException as e:
-            print(f"Exception when calling create_album: {e}\n")
+            logger.exception(f"Exception when calling create_album")
 
     def add_picture_to_album(self, album_id, asset_ids):
         with openapi_client.ApiClient(self.api_configuration) as api_client:
@@ -76,30 +101,32 @@ class ImmichAlbums:
             api_instance = openapi_client.AlbumApi(api_client)
 
             try:
-                print(f"Adding assets to album {album_id}\n")
+                logger.debug(f"Adding assets to album {album_id}\n")
                 bulkIdsDto = openapi_client.BulkIdsDto(ids=asset_ids)
                 api_response = api_instance.add_assets_to_album(album_id, bulkIdsDto)
-                print("The response of add asset to album:\n")
-                print(api_response)
+                logger.debug("The response of add asset to album:\n")
+                logger.debug(api_response)
             except ApiException as e:
-                print(f"Exception when calling create_album: {e}\n")
+                logger.exception(f"Exception when calling add_assets_to_album")
 
     def get_assets_in_folder(self, folder: str, original_path: str, replace_path: str):
         assets_ids = []
+        missing_files = []
 
         for filename in os.listdir(folder):
             full_path = os.path.join(folder, filename)
             if os.path.isfile(full_path):
                 replaced_path = full_path.replace(original_path, replace_path)
-                print(f"searching for: {replaced_path}")
+                logger.debug(f"searching for: {replaced_path}")
                 asset_id = self.get_asset_by_original_path(replaced_path)
                 if asset_id is None:
-                    print(f"not found: {replaced_path}")
+                    logger.info(f"File {replaced_path} is missing !")
+                    missing_files.append(replace_path)
                 else:
-                    print(f"found asset id: {asset_id}")
                     assets_ids.append(asset_id)
+                    logger.debug(f"File {replaced_path} is {asset_id}")
 
-        return [str(asset_id) for asset_id in assets_ids]
+        return ([str(asset_id) for asset_id in assets_ids], missing_files)
 
     def create_album_from_folder(
         self,
@@ -108,32 +135,34 @@ class ImmichAlbums:
         replace_path: str,
         dry_run: bool = False,
         skip_existing: bool = False,
-    ):
+    ) -> ProcessingResults:
         album = os.path.basename(path)
 
         album_id = read_album_id(path)
         if album_id:
-            print(f"Album {album} exists with id {album_id}")
+            logger.debug(f"Album {album} exists with id {album_id}")
 
             if skip_existing:
-                print(f"Skipping existing album {album}")
-                return
+                logger.info(f"Skipping existing album {album}")
+                return ProcessingResults(0,0, album)
         else:
-            print(f"Album {album} does not exist")
+            logger.debug(f"Album {album} does not exist")
 
-        assets_ids = self.get_assets_in_folder(path, original_path, replace_path)
+        (assets_ids, missng_files) = self.get_assets_in_folder(path, original_path, replace_path)
 
         if not dry_run:
             if album_id:
-                print(f"Adding assets to album {album_id}")
+                logger.debug(f"Adding assets to album {album_id}")
                 self.add_picture_to_album(album_id, assets_ids)
             else:
                 album_id = self.create_album(album, assets_ids)
-                print("Creating .album")
+                logger.debug(f"Creating file .album for album {album}")
                 write_album_id(path, album_id)
         else:
-            print(f"DRY RUN: Creating album {album}")
-            print(f"DRY RUN: Assets ids: {assets_ids}")
+            logger.debug(f"DRY RUN: Creating album {album} with assets {assets_ids} ")
+            # logger.info(f"DRY RUN: Assets ids: {assets_ids}")
+
+        return ProcessingResults(len(assets_ids), len(missng_files) , album)
 
     def create_albums_from_folder(
         self,
@@ -152,16 +181,17 @@ class ImmichAlbums:
         if recursive:
             for folder_name, sub_folders, filenames in os.walk(path):
                 if folder_name in skip:
-                    print(f"Skipping folder: {folder_name}")
+                    logger.info(f"Skipping folder: {folder_name}")
                     continue
-                print(f"\nProcessing folder: {folder_name}")
-                self.create_album_from_folder(
+                logger.info(f"Processing folder: {folder_name}")
+                pres = self.create_album_from_folder(
                     path,
                     original_path,
                     replace_path,
                     dry_run,
                     skip_existing=skip_existing,
                 )
+                logger.info(f"Created album {pres.album_name} with {pres.added_files} files ")
 
                 for sub_folder in sub_folders:
                     path = os.path.join(folder_name, sub_folder)
@@ -176,7 +206,7 @@ class ImmichAlbums:
                     )
                 break  # Avoid walking over sub folders of path which are visited by the for loop.
         else:
-            print(f"Processing folder: {path}\n")
+            logger.info(f"Processing folder: {path}\n")
             self.create_album_from_folder(
                 path, original_path, replace_path, dry_run, skip_existing=skip_existing
             )
@@ -186,7 +216,7 @@ def set_default(ctx, param, value):
     config_file = os.path.expanduser(value)
 
     if os.path.exists(config_file):
-        print("Loading config from: " + config_file)
+        logger.info("Loading config from: " + config_file)
         with open(config_file, "r") as f:
             config = load(f.read(), Loader=Loader)
         ctx.default_map = config
